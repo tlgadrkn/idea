@@ -1,6 +1,7 @@
 import { majorScale, Pane, Text } from 'evergreen-ui'
 import Container from '../components/Container'
 import Hero from '../components/Hero'
+import Logo from '../components/Logo'
 import styles from '../styles/Home.module.css'
 
 interface HomeProps {
@@ -15,11 +16,9 @@ const Home: React.FC<HomeProps> = ({ content }) => {
     <Pane>
       <header>
         <Container>
-          <Hero content={content.hero}>
-            <Text />
-          </Hero>
+          <Logo />
+          <Hero content={content.hero} />
         </Container>
-        <Text>Idea Logo</Text>
       </header>
       <main>MAIN</main>
       <footer>
