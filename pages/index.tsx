@@ -1,4 +1,6 @@
 import { majorScale, Pane, Text } from 'evergreen-ui'
+import Container from '../components/Container'
+import Hero from '../components/Hero'
 import styles from '../styles/Home.module.css'
 
 interface HomeProps {
@@ -8,16 +10,23 @@ interface HomeProps {
   }
 }
 
-const Home: React.FC<HomeProps> = () => {
+const Home: React.FC<HomeProps> = ({ content }) => {
   return (
     <Pane>
       <header>
+        <Container>
+          <Hero content={content.hero}>
+            <Text />
+          </Hero>
+        </Container>
         <Text>Idea Logo</Text>
       </header>
       <main>MAIN</main>
       <footer>
         <Pane background="overlay" paddingY={majorScale(9)}>
-          FOOTER
+          <Container>
+            <Text>FOOTER</Text>
+          </Container>
         </Pane>
       </footer>
     </Pane>
