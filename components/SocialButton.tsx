@@ -1,6 +1,6 @@
-import * as React from 'react'
+import React from 'react'
 import { Pane, Card } from 'evergreen-ui'
-import GithubIcon from './GithubIcon'
+import GithubIcon from './githubIcon'
 
 const icons = { github: GithubIcon }
 const SocialButton = ({ type, onClick }) => {

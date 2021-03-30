@@ -1,9 +1,10 @@
-import { Pane, majorScale, Text } from 'evergreen-ui'
 import React from 'react'
-import Logo from '../components/Logo'
-import SocialButton from '../components/SocialButton'
+import { Pane, majorScale, Text } from 'evergreen-ui'
+import Logo from '../components/logo'
 
-const SignIn: React.FC = () => {
+import SocialButton from '../components/socialButton'
+
+const Signin = () => {
   return (
     <Pane height="100vh" width="100vw" display="flex">
       <Pane
@@ -12,7 +13,7 @@ const SignIn: React.FC = () => {
         borderRight
         paddingX={majorScale(8)}
         paddingY={majorScale(5)}
-        background="#4792b8"
+        background="#47B881"
         display="flex"
         alignItems="center"
         justifyContent="center"
@@ -43,4 +44,4 @@ const SignIn: React.FC = () => {
   )
 }
 
-export default SignIn
+export default Signin

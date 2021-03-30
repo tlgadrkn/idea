@@ -1,11 +1,7 @@
-import { Heading, majorScale, Pane, Paragraph } from 'evergreen-ui'
-import * as React from 'react'
+import React, { FC } from 'react'
+import { Pane, Heading, Paragraph, majorScale } from 'evergreen-ui'
 
-interface Props {
-  content: { title: string; body: string }
-}
-
-export const Hero: React.FC<Props> = ({ content }: Props) => {
+const Hero: FC<{ content: { title: string; body: string } }> = ({ content }) => {
   return (
     <Pane
       width="100%"
