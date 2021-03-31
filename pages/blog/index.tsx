@@ -10,6 +10,8 @@ import PostPreview from '../../components/postPreview'
 import { posts as postsFromCMS } from '../../content'
 
 const Blog = ({ posts }) => {
+  console.log(posts)
+
   return (
     <Pane>
       <header>
@@ -32,9 +34,23 @@ Blog.defaultProps = {
   posts: [],
 }
 
-export default Blog
+export function getStaticProps() {
+  const cmsPosts = postsFromCMS.published.map((post) => {
+    const { data } = matter(post)
+    return data
+  })
+  const postsPath = path.join(process.cwd(), 'posts')
+  const filenames = fs.readdirSync(postsPath)
+  const filePosts = filenames.map((name) => {
+    const fullPath = path.join(process.cwd(), 'posts', name)
+    const file = fs.readFileSync(fullPath, 'utf-8')
+    const { data } = matter(file)
+    return data
+  })
+  const posts = [...cmsPosts, ...filePosts]
+  return {
+    props: { posts },
+  }
+}
 
-/**
- * Need to get the posts from the
- * fs and our CMS
- */
+export default Blog
